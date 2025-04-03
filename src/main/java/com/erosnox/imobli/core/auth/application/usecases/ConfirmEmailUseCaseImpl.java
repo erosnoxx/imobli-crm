@@ -18,6 +18,7 @@ public class ConfirmEmailUseCaseImpl implements ConfirmEmailUseCase {
     @Override
     public void execute(String otpCode) {
         var otpDto = otpCodeService.validateOtpCode(otpCode);
+        //
         repository.activateUser(otpDto.userId());
     }
 }
